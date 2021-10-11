@@ -15,6 +15,18 @@ import SpeechRecognition, {
 } from "react-speech-recognition";
 
 function App() {
+  const commands = [
+    {
+      command: ["Aller à *", "Ouvrir *"],
+      callback: (redirectPage) => setRedirectUrl(redirectPage),
+    },
+  ];
+
+  const { transcript } = useSpeechRecognition({ commands });
+
+  // State
+  const [redirectUrl, setRedirectUrl] = useState("");
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -31,6 +43,11 @@ function App() {
         <Route path="/accessibility" component={Accessibility} />
         <Route path="/contact" component={Contact} />
       </BrowserRouter>
+
+      <p id="transcript">Transcription: {transcript}</p>
+
+      {/* Temporary button */}
+      <button onClick={SpeechRecognition.startListening}>Commencer</button>
     </div>
   );
 }

@@ -54,6 +54,7 @@ h1,
 h2 {
   font-family: Monument Extended, serif !important;
   font-weight: 400;
+  margin-bottom: 1rem;
 }
 
 h1 {
@@ -72,4 +73,25 @@ h2 {
   margin: 0 1rem;
   text-decoration: none;
   color: #d8f500;
+}
+
+#transcript {
+  margin-bottom: 2rem;
+  font-family: Neue Machina, serif;
+  font-size: 1.5rem;
+}
+
+button {
+  color: #d8f500;
+  background: none;
+  font-family: Neue Machina, serif;
+  font-weight: 800;
+  padding: 1rem 2rem;
+  border: solid 2px #d8f500;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+button:active {
+  transform: scale(0.9);
 }
