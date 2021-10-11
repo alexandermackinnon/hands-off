@@ -1,7 +1,7 @@
 import React from "react";
 
 function Project() {
-  return <h1>À propos du projet</h1>;
+  return <h2>À propos du projet</h2>;
 }
 
 export default Project;

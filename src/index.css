@@ -50,7 +50,26 @@ body {
   text-align: center;
 }
 
-h1 {
+h1,
+h2 {
   font-family: Monument Extended, serif !important;
   font-weight: 400;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+#links {
+  margin-bottom: 2rem;
+}
+
+#links a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #d8f500;
 }

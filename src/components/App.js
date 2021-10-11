@@ -15,7 +15,24 @@ import SpeechRecognition, {
 } from "react-speech-recognition";
 
 function App() {
-  return <div className="app">BIENVENUE.</div>;
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <div id="links">
+          <Link to="/">Accueil</Link>
+          <Link to="/project">Le projet</Link>
+          <Link to="/accessibility">Accessibilité</Link>
+          <Link to="/contact">Contact</Link>
+        </div>
+
+        <Route path="/" exact component={Home} />
+        <Route path="/home" component={Home} />
+        <Route path="/project" component={Project} />
+        <Route path="/accessibility" component={Accessibility} />
+        <Route path="/contact" component={Contact} />
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default App;
