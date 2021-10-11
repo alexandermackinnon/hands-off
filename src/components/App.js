@@ -7,7 +7,7 @@ import Accessibility from "./Accessibility";
 import Contact from "./Contact";
 
 // Import React Router
-import { BrowserRouter, Route, Link, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Redirect } from "react-router-dom";
 
 // Import Speech Recognition
 import SpeechRecognition, {
@@ -17,24 +17,58 @@ import SpeechRecognition, {
 function App() {
   const commands = [
     {
-      command: ["Aller à *", "Ouvrir *"],
+      command: ["Aller à *", "Ouvrir *", "Go to *", "Open *", "*"],
       callback: (redirectPage) => setRedirectUrl(redirectPage),
     },
   ];
 
-  const { transcript } = useSpeechRecognition({ commands });
+  const { transcript, resetTranscript } = useSpeechRecognition({ commands });
+  const [redirectUrl, setRedirectUrl] = useState(""); // State
 
-  // State
-  const [redirectUrl, setRedirectUrl] = useState("");
+  const pages = ["accueil", "le projet", "accessibilité", "contact"];
+  const urls = {
+    accueil: "/",
+    "le projet": "/project",
+    accessibilité: "/accessibility",
+    contact: "/contact",
+  };
+
+  if (!SpeechRecognition.browserSupportsSpeechRecognition) {
+    return null;
+  }
+
+  // Redirection
+  let redirect = "";
+
+  if (redirectUrl) {
+    if (pages.includes(redirectUrl)) {
+      redirect = <Redirect to={urls[redirectUrl]} />;
+    } else {
+      redirect = <p id="notFound">Page non trouvée: {redirectUrl}</p>;
+    }
+  }
+
+  // Commencer à écouter
+  if (SpeechRecognition.browserSupportsContinuousListening) {
+    SpeechRecognition.startListening({ continuous: true, language: "fr-FR" });
+  } else {
+    <button
+      onClick={SpeechRecognition.startListening({
+        language: "fr-FR",
+      })}
+    >
+      Commencer
+    </button>;
+  }
 
   return (
     <div className="App">
       <BrowserRouter>
         <div id="links">
-          <Link to="/">Accueil</Link>
-          <Link to="/project">Le projet</Link>
-          <Link to="/accessibility">Accessibilité</Link>
-          <Link to="/contact">Contact</Link>
+          <a>Accueil</a>
+          <a>Le projet</a>
+          <a>Accessibilité</a>
+          <a>Contact</a>
         </div>
 
         <Route path="/" exact component={Home} />
@@ -42,12 +76,13 @@ function App() {
         <Route path="/project" component={Project} />
         <Route path="/accessibility" component={Accessibility} />
         <Route path="/contact" component={Contact} />
+
+        {redirect}
       </BrowserRouter>
 
       <p id="transcript">Transcription: {transcript}</p>
 
-      {/* Temporary button */}
-      <button onClick={SpeechRecognition.startListening}>Commencer</button>
+      <button onClick={resetTranscript}>Réinitialiser la transcription</button>
     </div>
   );
 }

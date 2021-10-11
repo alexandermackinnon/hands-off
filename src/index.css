@@ -65,6 +65,11 @@ h2 {
   font-size: 2rem;
 }
 
+#notFound {
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
 #links {
   margin-bottom: 2rem;
 }
@@ -78,7 +83,6 @@ h2 {
 #transcript {
   margin-bottom: 2rem;
   font-family: Neue Machina, serif;
-  font-size: 1.5rem;
 }
 
 button {
