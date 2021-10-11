@@ -50,11 +50,11 @@ function App() {
 
   // Commencer à écouter
   if (SpeechRecognition.browserSupportsContinuousListening) {
-    SpeechRecognition.startListening({ continuous: true, language: "fr-FR" });
+    SpeechRecognition.startListening({ continuous: true, language: "fr-CA" });
   } else {
     <button
       onClick={SpeechRecognition.startListening({
-        language: "fr-FR",
+        language: "fr-CA",
       })}
     >
       Commencer
@@ -65,10 +65,10 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <div id="links">
-          <a>Accueil</a>
-          <a>Le projet</a>
-          <a>Accessibilité</a>
-          <a>Contact</a>
+          <p>Accueil</p>
+          <p>Le projet</p>
+          <p>Accessibilité</p>
+          <p>Contact</p>
         </div>
 
         <Route path="/" exact component={Home} />

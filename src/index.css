@@ -74,10 +74,9 @@ h2 {
   margin-bottom: 2rem;
 }
 
-#links a {
+#links p {
   margin: 0 1rem;
-  text-decoration: none;
-  color: #d8f500;
+  display: inline-block;
 }
 
 #transcript {
