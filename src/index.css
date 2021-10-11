@@ -1,20 +1,35 @@
+/* -------------- FONTS -------------- */
+
 @font-face {
-  font-family: "NeueMachina";
-  src: local("NeueMachina"),
+  font-family: "Monument Extended";
+  src: local("Monument Extended"),
+    url(./fonts/MonumentExtended-Regular.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Monument Extended";
+  font-weight: 800;
+  src: local("Monument Extended"),
+    url(./fonts/MonumentExtended-Ultrabold.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Neue Machina";
+  src: local("Neue Machina"),
     url(./fonts/NeueMachina-Regular.otf) format("opentype");
 }
 
 @font-face {
-  font-family: "NeueMachina";
+  font-family: "Neue Machina";
   font-weight: 300;
-  src: local("NeueMachina"),
+  src: local("Neue Machina"),
     url(./fonts/NeueMachina-Light.otf) format("opentype");
 }
 
 @font-face {
-  font-family: "NeueMachina";
+  font-family: "Neue Machina";
   font-weight: 800;
-  src: local("NeueMachina"),
+  src: local("Neue Machina"),
     url(./fonts/NeueMachina-Ultrabold.otf) format("opentype");
 }
 
@@ -28,9 +43,13 @@ body {
   height: 100vh;
   background-color: #202020;
   color: #d8f500;
-  font-family: NeueMachina, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+h1 {
+  font-family: Monument Extended, serif;
+  font-weight: 400;
 }
