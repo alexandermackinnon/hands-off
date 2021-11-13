@@ -1,7 +1,7 @@
 import React from "react";
 
-function Project() {
+function About() {
   return <h2>À propos du projet</h2>;
 }
 
-export default Project;
+export default About;

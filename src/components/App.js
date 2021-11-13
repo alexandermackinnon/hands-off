@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 // Import Pages
 import Home from "./Home";
-import Project from "./Project";
+import Project from "./About";
 import Accessibility from "./Accessibility";
 import Contact from "./Contact";
 
@@ -25,11 +25,13 @@ function App() {
   const { transcript, resetTranscript } = useSpeechRecognition({ commands });
   const [redirectUrl, setRedirectUrl] = useState(""); // State
 
-  const pages = ["accueil", "le projet", "accessibilité", "contact"];
+  // Array of pages
+  const pages = ["home", "project", "accessibility", "contact"];
+
   const urls = {
-    accueil: "/",
-    "le projet": "/project",
-    accessibilité: "/accessibility",
+    home: "/",
+    project: "/project",
+    accessibility: "/accessibility",
     contact: "/contact",
   };
 
@@ -50,11 +52,11 @@ function App() {
 
   // Commencer à écouter
   if (SpeechRecognition.browserSupportsContinuousListening) {
-    SpeechRecognition.startListening({ continuous: true, language: "fr-CA" });
+    SpeechRecognition.startListening({ continuous: true, language: "en-US" });
   } else {
     <button
       onClick={SpeechRecognition.startListening({
-        language: "fr-CA",
+        language: "en-US",
       })}
     >
       Commencer
@@ -63,26 +65,45 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
-        <div id="links">
+      <header>
+        <div className="logo-wrapper">
+          <p>HO</p>
+          <div id="loader">
+            <div className="line-scale-pulse-out">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+          <p id="transcript">
+            <strong>Transcription</strong>: {transcript}
+          </p>
+        </div>
+        <div className="links-wrapper">
           <p>Accueil</p>
-          <p>Le projet</p>
-          <p>Accessibilité</p>
+          <p>Project</p>
+          <p>Accessibility</p>
           <p>Contact</p>
         </div>
+      </header>
 
-        <Route path="/" exact component={Home} />
-        <Route path="/home" component={Home} />
-        <Route path="/project" component={Project} />
-        <Route path="/accessibility" component={Accessibility} />
-        <Route path="/contact" component={Contact} />
+      <section>
+        <BrowserRouter>
+          <Route path="/" exact component={Home} />
+          <Route path="/home" component={Home} />
+          <Route path="/project" component={Project} />
+          <Route path="/accessibility" component={Accessibility} />
+          <Route path="/contact" component={Contact} />
 
-        {redirect}
-      </BrowserRouter>
-
-      <p id="transcript">Transcription: {transcript}</p>
-
-      <button onClick={resetTranscript}>Réinitialiser la transcription</button>
+          {redirect}
+        </BrowserRouter>
+        <button onClick={resetTranscript}>
+          Réinitialiser la transcription
+        </button>
+      </section>
+      <footer></footer>
     </div>
   );
 }
