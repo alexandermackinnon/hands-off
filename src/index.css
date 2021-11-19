@@ -42,9 +42,18 @@ body {
   width: 100vw;
   height: 100vh;
   font-family: Neue Machina, serif;
-  background-color: #202020;
+  background-color: transparent;
   color: #d8f500;
   overflow: hidden;
+}
+
+.bgvid {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 section {
@@ -115,7 +124,7 @@ header {
 
 .logo-wrapper {
   position: absolute;
-  display: inline-block;
+  display: flex;
   left: 32px;
 }
 
@@ -146,11 +155,7 @@ header {
   display: none;
 }
 
-#loader {
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
-}
+/* Pulse Icon */
 
 .line-scale-pulse-out > div {
   background-color: #d8f500;

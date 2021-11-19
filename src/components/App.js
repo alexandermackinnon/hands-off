@@ -6,6 +6,9 @@ import Project from "./About";
 import Accessibility from "./Accessibility";
 import Contact from "./Contact";
 
+// Import Media
+import bg from "../medias/bg.mp4";
+
 // Import React Router
 import { BrowserRouter, Route, Redirect } from "react-router-dom";
 
@@ -26,13 +29,22 @@ function App() {
   const [redirectUrl, setRedirectUrl] = useState(""); // State
 
   // Array of pages
-  const pages = ["home", "project", "accessibility", "contact"];
+  const pages = [
+    "home",
+    "project",
+    "Project",
+    "accessibility",
+    "contact",
+    "contacts",
+  ];
 
   const urls = {
     home: "/",
-    project: "/project",
+    project: "project",
+    Project: "/Project",
     accessibility: "/accessibility",
     contact: "/contact",
+    contacts: "/contact",
   };
 
   if (!SpeechRecognition.browserSupportsSpeechRecognition) {
@@ -65,6 +77,9 @@ function App() {
 
   return (
     <div className="App">
+      <video playsInline autoPlay muted loop poster={bg} className="bgvid">
+        <source src={bg} type="video/mp4" />
+      </video>
       <header>
         <div className="logo-wrapper">
           <p>HO</p>
