@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 // Import Pages
 import Home from "./Home";
-import Project from "./About";
+import About from "./About";
 import Accessibility from "./Accessibility";
 import Contact from "./Contact";
 
@@ -29,19 +29,11 @@ function App() {
   const [redirectUrl, setRedirectUrl] = useState(""); // State
 
   // Array of pages
-  const pages = [
-    "home",
-    "project",
-    "Project",
-    "accessibility",
-    "contact",
-    "contacts",
-  ];
+  const pages = ["home", "about", "accessibility", "contact", "contacts"];
 
   const urls = {
     home: "/",
-    project: "project",
-    Project: "/Project",
+    about: "/about",
     accessibility: "/accessibility",
     contact: "/contact",
     contacts: "/contact",
@@ -80,27 +72,23 @@ function App() {
       <video playsInline autoPlay muted loop poster={bg} className="bgvid">
         <source src={bg} type="video/mp4" />
       </video>
+
       <header>
-        <div className="logo-wrapper">
+        <div className="header-left-wrapper">
           <p>HO</p>
-          <div id="loader">
-            <div className="line-scale-pulse-out">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
+          <div className="line-scale-pulse-out">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
           </div>
           <p id="transcript">
             <strong>Transcription</strong>: {transcript}
           </p>
         </div>
-        <div className="links-wrapper">
-          <p>Accueil</p>
-          <p>Project</p>
-          <p>Accessibility</p>
-          <p>Contact</p>
+        <div className="header-right-wrapper">
+          <button onClick={resetTranscript}>Menu</button>
         </div>
       </header>
 
@@ -108,17 +96,13 @@ function App() {
         <BrowserRouter>
           <Route path="/" exact component={Home} />
           <Route path="/home" component={Home} />
-          <Route path="/project" component={Project} />
+          <Route path="/about" component={About} />
           <Route path="/accessibility" component={Accessibility} />
           <Route path="/contact" component={Contact} />
 
           {redirect}
         </BrowserRouter>
-        <button onClick={resetTranscript}>
-          Réinitialiser la transcription
-        </button>
       </section>
-      <footer></footer>
     </div>
   );
 }

@@ -33,6 +33,8 @@
     url(./fonts/NeueMachina-Ultrabold.otf) format("opentype");
 }
 
+/* -------------- GENERAL -------------- */
+
 * {
   margin: 0;
   padding: 0;
@@ -47,7 +49,9 @@ body {
   overflow: hidden;
 }
 
+/* BG */
 .bgvid {
+  z-index: -1;
   object-fit: cover;
   width: 100vw;
   height: 100vh;
@@ -56,22 +60,13 @@ body {
   left: 0;
 }
 
-section {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  z-index: 10;
-  transform: translateY(-50%);
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-}
-
+/* Typo */
 h1,
-h2 {
+h2,
+h3,
+h4 {
   font-family: Monument Extended, serif !important;
   font-weight: 400;
-  margin-bottom: 1rem;
 }
 
 h1 {
@@ -79,37 +74,26 @@ h1 {
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 4rem;
 }
 
-#notFound {
-  margin-bottom: 1rem;
-  font-weight: 800;
-}
-
-#links {
-  margin-bottom: 2rem;
-}
-
-#links p {
-  margin: 0 1rem;
-  display: inline-block;
-}
-
-#transcript {
-  margin-bottom: 2rem;
-  font-family: Neue Machina, serif;
+p {
+  font-size: 1rem;
+  line-height: 1.5em;
 }
 
 button {
-  color: #d8f500;
   background: none;
   font-family: Neue Machina, serif;
-  font-weight: 800;
-  padding: 1rem 2rem;
-  border: solid 2px #d8f500;
+  padding: 1rem 1rem;
+  color: #fff;
+  border: solid #d8f500 1px;
+  border-radius: 500px;
+  text-align: center;
+  margin-bottom: 1rem;
   cursor: pointer;
   transition: all 200ms ease;
+  float: right;
 }
 
 button:active {
@@ -120,39 +104,85 @@ button:active {
 
 header {
   margin: 32px;
+  height: 50px;
+  overflow: hidden;
 }
 
-.logo-wrapper {
+#transcript,
+#notFound {
+  font-family: Neue Machina, serif;
+  color: #fff;
+}
+
+.header-left-wrapper {
   position: absolute;
+  overflow: hidden;
   display: flex;
+  gap: 1rem;
   left: 32px;
+  width: 80%;
 }
 
-.logo-wrapper p:nth-child(1) {
+.header-left-wrapper p:nth-child(1) {
   font-size: 2rem;
   font-family: Monument Extended, serif !important;
-  padding-right: 1rem;
 }
 
-.logo-wrapper p:nth-child(2) {
+.header-left-wrapper p:nth-child(3) {
   font-size: 0.8rem;
-  width: 20%;
+  line-height: 1rem;
+  width: 50%;
   font-family: Neue Machina, serif !important;
+  overflow: hidden;
+  height: 48px;
 }
 
-.links-wrapper {
+.header-right-wrapper {
+  width: 20%;
   position: relative;
   display: inline;
   float: right;
 }
 
-.links-wrapper p {
-  padding-right: 1rem;
+.links-wrapper {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 32px;
 }
 
-.no-js #preloader,
-.oldie #preloader {
-  display: none;
+.centered-links {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+.left-links {
+  left: 32px !important;
+}
+
+.right-links {
+  left: 32px !important;
+}
+
+.links-wrapper div h4 {
+  padding: 1rem 1rem;
+  color: #fff;
+  background-color: #202020 !important;
+  border: solid #d8f500 2px;
+  border-radius: 500px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.links-wrapper div h4.active-page {
+  background-color: #d8f500 !important;
+  color: #202020 !important;
+}
+
+.links-wrapper div p {
+  font-size: 0.6rem;
+  text-align: center;
 }
 
 /* Pulse Icon */
@@ -214,4 +244,55 @@ header {
     -webkit-transform: scaley(1);
     transform: scaley(1);
   }
+}
+
+/* -------------- PAGES -------------- */
+
+/* Home */
+div.homepage-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 10;
+  transform: translateY(-50%);
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* About */
+div.page-wrapper {
+  margin: 64px;
+  display: flex;
+}
+
+div.page-wrapper .left-column {
+  width: 50%;
+}
+
+div.page-wrapper .left-column h2 {
+  position: fixed;
+  text-align: left;
+  -webkit-text-fill-color: #d8f500; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #202020;
+}
+
+div.page-wrapper .right-column {
+  width: 50%;
+}
+
+div.page-wrapper .right-column h2 {
+  position: absolute;
+  right: 32px;
+  top: 50%;
+  text-align: right;
+  -webkit-text-fill-color: #d8f500; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #202020;
+}
+
+div.page-wrapper .right-column img {
+  float: right;
+  height: 90vh;
 }
