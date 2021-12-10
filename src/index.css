@@ -41,6 +41,7 @@
 }
 
 body {
+  /* cursor: none; */
   width: 100vw;
   height: 100vh;
   font-family: Neue Machina, serif;
@@ -108,10 +109,20 @@ header {
   overflow: hidden;
 }
 
-#transcript,
-#notFound {
+#transcript {
   font-family: Neue Machina, serif;
   color: #fff;
+  font-size: 0.8rem;
+}
+
+#notFound {
+  position: absolute;
+  top: 100px;
+  left: 4vw;
+  font-family: Neue Machina, serif;
+  font-weight: 800;
+  color: #d8f500;
+  font-size: 0.8rem;
 }
 
 .header-left-wrapper {
@@ -119,7 +130,7 @@ header {
   overflow: hidden;
   display: flex;
   gap: 1rem;
-  left: 32px;
+  left: 4vw;
   width: 80%;
 }
 
@@ -142,6 +153,7 @@ header {
   position: relative;
   display: inline;
   float: right;
+  right: 4vw;
 }
 
 .links-wrapper {
@@ -158,11 +170,11 @@ header {
 }
 
 .left-links {
-  left: 32px !important;
+  left: 4vw !important;
 }
 
 .right-links {
-  left: 32px !important;
+  right: 4vw !important;
 }
 
 .links-wrapper div h4 {
@@ -252,7 +264,6 @@ header {
 div.homepage-wrapper {
   position: absolute;
   top: 50%;
-  left: 0;
   z-index: 10;
   transform: translateY(-50%);
   width: 100%;
@@ -260,9 +271,9 @@ div.homepage-wrapper {
   text-align: center;
 }
 
-/* About */
+/* About & Accessibility */
 div.page-wrapper {
-  margin: 64px;
+  margin: 4vw;
   display: flex;
 }
 
@@ -270,8 +281,20 @@ div.page-wrapper .left-column {
   width: 50%;
 }
 
+div.page-wrapper .left-column p {
+  font-size: 1.2vw;
+  line-height: 1.8vw;
+}
+
+div.page-wrapper .left-column p {
+  font-size: 1vw;
+  line-height: 1.8vw;
+}
+
 div.page-wrapper .left-column h2 {
-  position: fixed;
+  position: absolute;
+  left: 4vw;
+  top: 50%;
   text-align: left;
   -webkit-text-fill-color: #d8f500; /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 2px;
@@ -284,7 +307,7 @@ div.page-wrapper .right-column {
 
 div.page-wrapper .right-column h2 {
   position: absolute;
-  right: 32px;
+  right: 4vw;
   top: 50%;
   text-align: right;
   -webkit-text-fill-color: #d8f500; /* Will override color (regardless of order) */
@@ -292,7 +315,34 @@ div.page-wrapper .right-column h2 {
   -webkit-text-stroke-color: #202020;
 }
 
+div.page-wrapper .left-column img {
+  position: absolute;
+  left: 0;
+  width: 40%;
+}
+
 div.page-wrapper .right-column img {
   float: right;
   height: 90vh;
+}
+
+/* Contact */
+div.contact-info {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 0px;
+}
+
+div.contact-info .contact-col {
+  width: 20%;
+}
+
+div.contact-info .contact-col h4 {
+  padding-bottom: 1rem;
+}
+
+div.contact-info .contact-col img {
+  width: 100%;
 }

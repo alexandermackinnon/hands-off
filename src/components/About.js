@@ -7,51 +7,54 @@ function About() {
   return (
     <>
       <div className="page-wrapper">
-        <div class="left-column">
+        <div className="left-column">
           <p>
-            Il y a plus d'un demi-siècle maintenant, le premier prototype
-            d’ordinateur personnel est apparu, c’est-à-dire le modèle avec
-            souris et clavier qui est aujourd’hui un indispensable générationnel
-            dans notre vie de tous les jours. Avec le temps, la technologie
-            avance démesurément vite, et sans voir ce dernier passer, peut-être
-            que ces accessoires d’ordinateur seront considérées dans quelques
-            années comme des anciennes machines. Pour se préparer à un tel
-            changement, le Web va devoir s’adapter en conséquence. C’est d’où
-            vient l’idée de lancer le projet Hands Off: un site Web qui se
-            distingue du modèle conventionnel. On peut dire adieu au clavier et
-            à la souris - il est entièrement navigable par la voix. Pas besoin
-            de défiler, de cliquer, ou de taper. La page s’affiche à la hauteur
-            et à la longueur de l’écran et les hyperliens sont accessibles grâce
-            à des raccourcis de reconnaissance vocale. Hands Off est un plan,
-            une base, mais surtout, un test pour savoir si nous aurons besoin du
-            clavier et de la souris d’ordinateur ou non pour surfer sur le Web
-            du futur.
+            More than half a century ago, the first prototype of the personal
+            computer appeared, that is, the model with mouse and keyboard that
+            is now a generational essential in our daily life. As time goes by,
+            technology advances inordinately fast, and without seeing it pass,
+            perhaps in a few years these computer accessories will be considered
+            as old machines. To prepare for such a change, the Web will have to
+            adapt accordingly. This is where the idea of launching the Hands Off
+            project comes from: a Web site that differs from the conventional
+            model. You can say goodbye to the keyboard and mouse - it is
+            entirely navigable by voice. No need to scroll, click, or type. The
+            page is displayed at the height and length of the screen, and
+            hyperlinks are accessible through voice recognition shortcuts. Hands
+            Off is a blueprint, a foundation, but most importantly, a test of
+            whether or not we will need the computer keyboard and mouse to surf
+            the Web of the future.
+          </p>
+          <br />
+          <p>
+            Want to read more about the project? Read the Hands Off project
+            report by saying <strong>'download report'.</strong>
           </p>
         </div>
-        <div class="right-column">
+        <div className="right-column">
           <img src={project} alt="Woman using the Hands Off software" />
           <h2>
-            HANDS OFF, <br />
-            C’EST QUOI?
+            SO WHAT IS <br />
+            HANDS OFF?
           </h2>
         </div>
       </div>
       <div className="links-wrapper left-links">
         <div>
           <h4>Home</h4>
-          <p>Say 'go to home’ or ‘page 1’</p>
+          <p>Say 'go to home’</p>
         </div>
         <div>
-          <h4 class="active-page">About</h4>
+          <h4 className="active-page">About</h4>
           <p>You are currently on this page.</p>
         </div>
         <div>
           <h4>Accessibility</h4>
-          <p>Say 'go to accessibility’ or ‘page 3’</p>
+          <p>Say 'go to accessibility’</p>
         </div>
         <div>
           <h4>Contact</h4>
-          <p>Say 'go to contact’ or ‘page 4’</p>
+          <p>Say 'go to contact’</p>
         </div>
       </div>
     </>

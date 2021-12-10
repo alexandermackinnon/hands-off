@@ -5,24 +5,24 @@ function Home() {
     <>
       <div className="homepage-wrapper">
         <h1>HANDS OFF</h1>
-        <div class="emblem">NAVIGUER AVEC LA VOIX </div>
+        <div className="emblem">NAVIGUER AVEC LA VOIX </div>
       </div>
       <div className="links-wrapper centered-links">
         <div>
-          <h4 class="active-page">Home</h4>
+          <h4 className="active-page">Home</h4>
           <p>You are currently on this page.</p>
         </div>
         <div>
           <h4>About</h4>
-          <p>Say 'go to project’ or ‘page 2’</p>
+          <p>Say 'go to about'</p>
         </div>
         <div>
           <h4>Accessibility</h4>
-          <p>Say 'go to accessibility’ or ‘page 3’</p>
+          <p>Say 'go to accessibility’</p>
         </div>
         <div>
           <h4>Contact</h4>
-          <p>Say 'go to contact’ or ‘page 4’</p>
+          <p>Say 'go to contact’</p>
         </div>
       </div>
     </>
