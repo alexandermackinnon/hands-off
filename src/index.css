@@ -41,7 +41,7 @@
 }
 
 body {
-  /* cursor: none; */
+  cursor: none;
   width: 100vw;
   height: 100vh;
   font-family: Neue Machina, serif;

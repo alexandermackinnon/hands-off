@@ -10,42 +10,42 @@ function Contact() {
         <h1>CONTACT</h1>
         <div className="contact-info">
           <div className="contact-col">
-            <h4>E-mail</h4>
+            <h4>Courriel</h4>
             <p>
-              Have any questions or comments concerning Hands Off, or anything
-              at all? Shoot me an e-mail! Please say{" "}
-              <strong>'send e-mail'</strong> to proceed.
+              Vous avez des questions ou des commentaires concernant Hands Off,
+              ou n'importe quoi d'autre ? Envoyez-moi un courriel ! Veuillez
+              dire <strong>'envoyer un message'</strong> pour procéder.
             </p>
           </div>
           <div className="contact-col">
-            <img src={contact} alt="Photo d'Alexander MacKinnon" />
+            <img src={contact} alt="Alexander MacKinnon" />
           </div>
           <div className="contact-col">
             <h4>Portfolio</h4>
             <p>
-              To see more projects of mine, or simply to know more about me,
-              feel free to visit my portfolio! Please say{" "}
-              <strong>'visit portfolio'</strong> to proceed.
+              Pour voir d'autres de mes projets, ou simplement pour en savoir
+              plus sur moi, n'hésitez pas à visiter mon portfolio ! Veuillez
+              dire <strong>'visiter le portfolio'</strong> pour procéder.
             </p>
           </div>
         </div>
       </div>
       <div className="links-wrapper centered-links">
         <div>
-          <h4>Home</h4>
-          <p>Say 'go to home'</p>
+          <h4>Accueil</h4>
+          <p>Dites 'ouvrir accueil'</p>
         </div>
         <div>
-          <h4>About</h4>
-          <p>Say 'go to project’</p>
+          <h4>À propos</h4>
+          <p>Dites 'ouvrir à propos'</p>
         </div>
         <div>
-          <h4>Accessibility</h4>
-          <p>Say 'go to accessibility’</p>
+          <h4>Accessibilité</h4>
+          <p>Dites 'ouvrir accessibilité'</p>
         </div>
         <div>
           <h4 className="active-page">Contact</h4>
-          <p>You are currently on this page.</p>
+          <p>Vous êtes présentement sur cette page.</p>
         </div>
       </div>
     </>

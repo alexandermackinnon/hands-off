@@ -23,18 +23,31 @@ function App() {
       command: ["Aller à *", "Ouvrir *", "Go to *", "Open *", "*"],
       callback: (redirectPage) => setRedirectUrl(redirectPage),
     },
+    {
+      command: ["Réinitialiser la transcription"],
+      callback: () => resetTranscript(),
+    },
+    {
+      command: ["Envoyer un message"],
+      callback: () =>
+        (window.location.href = "mailto:alexmackinnon55@gmail.com"),
+    },
+    {
+      command: ["Visiter le portfolio"],
+      callback: () => (window.location.href = "https://mackinnonmedia.com/"),
+    },
   ];
 
   const { transcript, resetTranscript } = useSpeechRecognition({ commands });
   const [redirectUrl, setRedirectUrl] = useState(""); // State
 
   // Array of pages
-  const pages = ["home", "about", "accessibility", "contact", "contacts"];
+  const pages = ["accueil", "à propos", "accessibilité", "contact", "contacts"];
 
   const urls = {
-    home: "/",
-    about: "/about",
-    accessibility: "/accessibility",
+    accueil: "/",
+    "à propos": "/about",
+    accessibilité: "/accessibility",
     contact: "/contact",
     contacts: "/contact",
   };
@@ -56,11 +69,11 @@ function App() {
 
   // Commencer à écouter
   if (SpeechRecognition.browserSupportsContinuousListening) {
-    SpeechRecognition.startListening({ continuous: true, language: "en-US" });
+    SpeechRecognition.startListening({ continuous: true, language: "fr-FR" });
   } else {
     <button
       onClick={SpeechRecognition.startListening({
-        language: "en-US",
+        language: "fr-FR",
       })}
     >
       Commencer
@@ -88,7 +101,7 @@ function App() {
           </p>
         </div>
         <div className="header-right-wrapper">
-          <button onClick={resetTranscript}>Menu</button>
+          <p>Site web par Alexander MacKinnon</p>
         </div>
       </header>
 
